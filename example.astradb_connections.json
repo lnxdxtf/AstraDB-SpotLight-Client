@@ -1,0 +1,36 @@
+{
+    "connections": [
+        {
+            "production": false,
+            "name": "somename",
+            "host": "somehost",
+            "databaseId": "xx1xx1",
+            "region": "us-east1",
+            "token": "AstraCS:xxxxxx"
+        },
+        {
+            "production": false,
+            "name": "somename",
+            "host": "somehost",
+            "databaseId": "xx1xx1",
+            "region": "us-east1",
+            "token": "AstraCS:xxxxxx"
+        },
+        {
+            "production": false,
+            "name": "somename",
+            "host": "somehost",
+            "databaseId": "xx1xx1",
+            "region": "us-east1",
+            "token": "AstraCS:xxxxxx"
+        },
+        {
+            "production": false,
+            "name": "somename",
+            "host": "somehost",
+            "databaseId": "xx1xx1",
+            "region": "us-east1",
+            "token": "AstraCS:xxxxxx"
+        }
+    ]
+}
