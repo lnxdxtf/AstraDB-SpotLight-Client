@@ -5,7 +5,7 @@
             <span
                 class="flex gap-4 items-center cursor-pointer rounded-md hover:bg-astra-secondary p-2 transition-colors duration-300 ease-linear"
                 data-bs-toggle="modal" data-bs-target="#addAstraConnection">
-                Add Connection
+                Add Connection (in memory)
                 <i class="fa-solid fa-plus"></i>
             </span>
             <span @click="howCreateAConnection"

@@ -14,27 +14,28 @@
                 <div class="modal-body relative p-4 flex flex-col gap-5 text-white">
                     <div class="flex flex-col w-full h-full gap-4 p-4 bg-astra-quaternary rounded-md">
                         <div class="w-full flex gap-4 items-center">
-                            <span>HOST:</span>
-                            <input type="text" class="bg-transparent outline-none border-b-astra-light">
+                            <span class="whitespace-nowrap">NAME:</span>
+                            <input type="text" v-model="connection.name"
+                                class="bg-transparent outline-none border-b-astra-light w-full truncate">
                         </div>
                         <div class="w-full flex gap-4 items-center">
-                            <span>DATABASE ID:</span>
-                            <input type="text" class="bg-transparent outline-none border-b-astra-light">
+                            <span class="whitespace-nowrap">DATABASE ID:</span>
+                            <input type="text" v-model="connection.databaseId"
+                                class="bg-transparent outline-none border-b-astra-light w-full truncate">
                         </div>
                         <div class="w-full flex gap-4 items-center">
-                            <span>REGION:</span>
-                            <input type="text" class="bg-transparent outline-none border-b-astra-light">
+                            <span class="whitespace-nowrap">REGION:</span>
+                            <input type="text" v-model="connection.region"
+                                class="bg-transparent outline-none border-b-astra-light w-full truncate">
                         </div>
                         <div class="w-full flex gap-4 items-center">
-                            <span>TOKEN:</span>
-                            <input type="text" class="bg-transparent outline-none border-b-astra-light">
+                            <span class="whitespace-nowrap">X-CASSANDRA-TOKEN:</span>
+                            <input type="text" v-model="connection.xCassandraToken"
+                                class="bg-transparent outline-none border-b-astra-light w-full truncate">
                         </div>
-                        <div class="w-full flex gap-4 items-center">
-                            <span>TYPE:</span>
-                            <input type="text" class="bg-transparent outline-none border-b-astra-light">
-                        </div>
+
                     </div>
-                    <div data-bs-dismiss="modal" aria-label="Close"
+                    <div @click="addConnection" data-bs-dismiss="modal" aria-label="Close"
                         class="w-full p-4 flex justify-center font-bold bg-astra-contrast hover:bg-astra-secondary cursor-pointer rounded-md">
                         Add
                     </div>
@@ -44,7 +45,8 @@
     </div>
 </template>
 <script>
+import { addConnectionCard } from '../utils/mixins/misc'
 export default {
-
+    mixins: [addConnectionCard]
 }
 </script>

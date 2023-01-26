@@ -1,46 +1,43 @@
+import AstraDBRestCLIENT from "../../modules/astradb/app";
 export const astraModule = {
     namespaced: true,
     state: () => ({
-        databaseID: '',
-        databaseRegion: '',
-        applicationToken: '',
+        astraClient: {},
         authenticated: false,
         connections: [],
     }),
     mutations: {
-        SET_DATABASE_ID(state: any, payload: string): void {
-            state.databaseID = payload;
-        },
-        SET_DATABASE_REGION(state: any, payload: string): void {
-            state.databaseRegion = payload;
-        },
-        SET_APPLICATION_TOKEN(state: any, payload: string): void {
-            state.applicationToken = payload;
-        },
-        SET_AUTHENTICATED(state: any, payload: boolean): void {
-            state.authenticated = payload;
+        SET_ASTRA_CLIENT(state: any, payload: Connection): void {
+            state.astraClient = new AstraDBRestCLIENT(payload);
+            state.authenticated = true;
         },
         async SET_CONNECTIONS(state: any,) {
             state.connections = [];
             const jsonCon = await (await fetch('../../../astradb_connections.json')).json();
-            state.connections = jsonCon.connections;
+            const connectionsFormated = jsonCon.connections.map((con: any) => {
+                const host = { host: `https://${con.databaseId}-${con.region}.apps.astra.datastax.com/api/rest/v2` }
+                return Object.assign(con, host)
+            })
+            state.connections = connectionsFormated;
         },
-        ADD_CONNECTION(state: any, payload: any): void {
+        ADD_CONNECTION(state: any, payload: Connection): void {
+            const host = { host: `https://${payload.databaseId}-${payload.region}.apps.astra.datastax.com/api/rest/v2` }
+            Object.assign(payload, host)
             state.connections.push(payload);
         },
         REMOVE_CONNECTION(state: any, payload: Connection): void {
-            const newConnections = state.connections.filter((c: Connection) => c.host != payload.host);
+            if (payload.host == state.astraClient.connection.host) state.astraClient = {}
+            const newConnections = state.connections.filter((c: Connection) => c.host !== payload.host);
             state.connections = newConnections;
         }
     }
 
 }
 
-interface Connection {
-    production: boolean;
+export interface Connection {
     name: string;
     host: string;
     databaseId: string;
     region: string;
-    token: string;
+    xCassandraToken: string;
 }

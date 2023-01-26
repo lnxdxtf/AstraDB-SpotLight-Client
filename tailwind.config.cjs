@@ -18,7 +18,7 @@ module.exports = {
           tertiary: "#046E8F",
           quaternary: "#183446",// +  dark
  
-          contrast: "#77BA99"
+          contrast: "#DBD56E"
         }
       }
     },

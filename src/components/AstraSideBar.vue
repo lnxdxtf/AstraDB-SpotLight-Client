@@ -12,7 +12,7 @@
             <div class="offcanvas-header flex items-center justify-between p-4">
                 <div class="flex flex-col items-center gap-2 my-5">
 
-                    <img src="../assets/logo-sportflare-nobg.png" class="w-2/4">
+                    <img src="../assets/astra-spotlight.png" class="w-2/4">
                     <span class="items-center flex justify-center text-astra-primary text-base font-bold">
                         <span v-if="expand">ASTRADB SPOTLIGHT</span>
                         <span v-else><i class="fa-solid fa-database"></i></span>

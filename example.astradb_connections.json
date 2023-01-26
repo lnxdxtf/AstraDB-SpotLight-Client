@@ -3,34 +3,30 @@
         {
             "production": false,
             "name": "somename",
-            "host": "somehost",
             "databaseId": "xx1xx1",
             "region": "us-east1",
-            "token": "AstraCS:xxxxxx"
+            "xCassandraToken": "test"
         },
         {
             "production": false,
             "name": "somename",
-            "host": "somehost",
             "databaseId": "xx1xx1",
             "region": "us-east1",
-            "token": "AstraCS:xxxxxx"
+            "xCassandraToken": "test"
         },
         {
             "production": false,
             "name": "somename",
-            "host": "somehost",
             "databaseId": "xx1xx1",
             "region": "us-east1",
-            "token": "AstraCS:xxxxxx"
+            "xCassandraToken": "test"
         },
         {
             "production": false,
             "name": "somename",
-            "host": "somehost",
             "databaseId": "xx1xx1",
             "region": "us-east1",
-            "token": "AstraCS:xxxxxx"
+            "xCassandraToken": "test"
         }
     ]
 }
