@@ -12,23 +12,28 @@
             <div class="offcanvas-header flex items-center justify-between p-4">
                 <div class="flex flex-col items-center gap-2 my-5">
 
-                    <img src="../assets/astra-spotlight.png" class="w-2/4">
+                    <img src="../assets/astra-spotlight.png" class="w-2/4 rounded-full">
                     <span class="items-center flex justify-center text-astra-primary text-base font-bold">
-                        <span v-if="expand">ASTRADB SPOTLIGHT</span>
-                        <span v-else><i class="fa-solid fa-database"></i></span>
+                        ASTRADB SPOTLIGHT
                     </span>
                 </div>
             </div>
             <div class="offcanvas-body flex-grow p-4 overflow-y-auto">
 
                 <div class="w-full flex flex-col gap-4">
-                    <div @click="expand = !expand" class="button-astra-menu">
-                        <span v-if="expand">HOME</span>
-                        <span v-else><i class="fa-solid fa-house"></i></span>
+                    <div @click="setPage('/')" class="button-astra-menu">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="w-[100px]">HOME</span>
                     </div>
-                    <div @click="expand = !expand" class="button-astra-menu">
-                        <span v-if="expand">KEYSPACES</span>
-                        <span v-else><i class="fa-solid fa-cloud"></i></span>
+                    <div v-if="$authenticated" class="w-full flex flex-col gap-4">
+                        <div @click="setPage('/astradb/keyspaces')" class="button-astra-menu">
+                            <i class="fa-solid fa-cloud"></i>
+                            <span class="w-[100px]">KEYSPACES</span>
+                        </div>
+                        <div @click="disconect" class="button-astra-menu">
+                            <i class="fa-solid fa-power-off"></i>
+                            <span class="w-[100px]">DISCONECT</span>
+                        </div>
                     </div>
                 </div>
 
@@ -46,6 +51,6 @@ export default {
 
 <style>
 .button-astra-menu {
-    @apply w-full py-2 flex items-center justify-center rounded-md bg-astra-tertiary hover:bg-astra-secondary text-white font-bold transition-colors duration-500 ease-out;
+    @apply w-full py-2 flex gap-4 items-center justify-center rounded-md bg-astra-tertiary hover:hue-rotate-90 text-white font-bold transition-colors duration-500 ease-out cursor-pointer;
 }
 </style>

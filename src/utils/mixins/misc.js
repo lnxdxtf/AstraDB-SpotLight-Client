@@ -4,7 +4,25 @@ import Swal from 'sweetalert2'
 export const sidebarMixin = {
     data() {
         return {
-            expand: true
+            expand: true,
+        }
+    },
+    computed: {
+        ...mapState('astraModule', {
+            $authenticated: 'authenticated',
+        })
+    },
+    methods: {
+        ...mapMutations('astraModule', {
+            $removeAstraClient: 'REMOVE_ASTRA_CLIENT'
+        }),
+        setPage(page) {
+            this.expand = false
+            this.$router.push(page)
+        },
+        disconect() {
+            this.setPage('/')
+            this.$removeAstraClient()
         }
     }
 }
@@ -38,6 +56,7 @@ export const connectionCard = {
         }),
         connectClient() {
             this.$setAstraClient(this.connection)
+            this.$router.push('/astradb/keyspaces')
         }
     }
 }

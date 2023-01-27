@@ -39,7 +39,7 @@
             </div>
         </div>
         <div @click="connectClient"
-            class="w-full flex justify-center text-xl font-bold rounded-md bg-astra-contrast hover:bg-astra-secondary p-4 cursor-pointer transition-colors duration-300 ease-in-out">
+            class="w-full flex justify-center text-xl font-bold rounded-md bg-astra-contrast hover:hue-rotate-30 p-4 cursor-pointer transition-all duration-300 ease-in-out">
             CONNECT
         </div>
     </div>

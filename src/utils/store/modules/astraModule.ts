@@ -2,7 +2,7 @@ import AstraDBRestCLIENT from "../../modules/astradb/app";
 export const astraModule = {
     namespaced: true,
     state: () => ({
-        astraClient: {},
+        astraClient: null,
         authenticated: false,
         connections: [],
     }),
@@ -11,17 +11,21 @@ export const astraModule = {
             state.astraClient = new AstraDBRestCLIENT(payload);
             state.authenticated = true;
         },
+        REMOVE_ASTRA_CLIENT(state: any): void {
+            state.astraClient = null;
+            state.authenticated = false;
+        },
         async SET_CONNECTIONS(state: any,) {
             state.connections = [];
             const jsonCon = await (await fetch('../../../astradb_connections.json')).json();
             const connectionsFormated = jsonCon.connections.map((con: any) => {
-                const host = { host: `https://${con.databaseId}-${con.region}.apps.astra.datastax.com/api/rest/v2` }
+                const host = { host: `https://${con.databaseId}-${con.region}.apps.astra.datastax.com/api/rest/v1` }
                 return Object.assign(con, host)
             })
             state.connections = connectionsFormated;
         },
         ADD_CONNECTION(state: any, payload: Connection): void {
-            const host = { host: `https://${payload.databaseId}-${payload.region}.apps.astra.datastax.com/api/rest/v2` }
+            const host = { host: `https://${payload.databaseId}-${payload.region}.apps.astra.datastax.com/api/rest/v1` }
             Object.assign(payload, host)
             state.connections.push(payload);
         },

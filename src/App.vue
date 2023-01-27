@@ -6,7 +6,7 @@
         <AstraTopBar />
       </div>
       <router-view
-        class="rounded-md bg-black dark:bg-opacity-60 bg-opacity-50 w-full h-[90vh] flex flex-col p-4 overflow-x-hidden overflow-y-auto"></router-view>
+        class="animate__animated animate__fadeIn rounded-md hide-scroll bg-black dark:bg-opacity-60 bg-opacity-50 w-full h-[90vh] flex flex-col p-4 overflow-x-hidden overflow-y-auto"></router-view>
     </div>
     <AstraModalContainer />
   </div>
