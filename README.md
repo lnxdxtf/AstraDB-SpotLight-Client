@@ -1,5 +1,5 @@
 # ASTRADB SPOTLIGHT CLIENT
-#### <a href="https://lnxdxtf.github.io/" target="_blank">CLIENT RUNNING 🚀</a>
+#### <a href="https://lnxdxtf.github.io/AstraDB-SpotLight-Client" target="_blank">CLIENT RUNNING 🚀</a>
 
 
 ## About
