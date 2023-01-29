@@ -1,4 +1,6 @@
 # ASTRADB SPOTLIGHT CLIENT
+#### <a href="https://lnxdxtf.github.io/" target="_blank">CLIENT RUNNING 🚀</a>
+
 
 ## About
    AstraDB Spotlight Client is an open source project developed using Vue3, TailwindCSS 3, TypeScript, and JavaScript. Its goal is to provide a simple and user-friendly interface for viewing data stored in Datastax's AstraDB. As the project is in its early stages, any help is welcome in contributing to the development and improvement of the project.
